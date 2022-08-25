@@ -11,17 +11,17 @@ pipeline{
     
    environment {
    	
-	def BranchName = "${BRANCH_NAME}"
+	def BranchName = "${BRANCHNAME}"
    }
    
-   def BranchName = "${BRANCH_NAME}"
+   def BranchName = "${BRANCHNAME}"
    
     stages{
         
        //checkout starting
         stage('Checkout'){
             steps{
-            git branch: "$BRANCH_NAME", credentialsId: 'github_new_creds', url: 'https://github.com/devopstools12/maven-web-application.git'                
+            git branch: "$BRANCHNAME", credentialsId: 'github_new_creds', url: 'https://github.com/devopstools12/maven-web-application.git'                
             }
         }//checkout closing
         
