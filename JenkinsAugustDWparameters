@@ -8,8 +8,10 @@ pipeline{
     tools{
         maven "maven3.8.4"
     }
-   
-   " def BranchName = "${BRANCH_NAME}" "
+    
+   environment {
+    def BranchName = "${BRANCH_NAME}" 
+   }
    
     stages{
         
