@@ -9,13 +9,17 @@ pipeline{
         maven "maven3.8.4"
     }
     
+   environment {
+   	
+	def BranchName = "${BRANCH_NAME}"
+   }
    
     stages{
         
        //checkout starting
         stage('Checkout'){
             steps{
-            git branch: "${branch}", credentialsId: 'github_new_creds', url: 'https://github.com/devopstools12/maven-web-application.git'                
+            git branch: "$BRANCH_NAME", credentialsId: 'github_new_creds', url: 'https://github.com/devopstools12/maven-web-application.git'                
             }
         }//checkout closing
         
