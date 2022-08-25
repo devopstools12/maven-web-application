@@ -51,7 +51,7 @@ stage('Deploy to tomcat'){
 	script {
      //sshagent(credentials: ['jenkins-tomcat-server'])
          sshagent(['b802621d-4397-4303-a50c-7adc73e2cfb7']){
-     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.183.253:/opt/apache-tomcat-9.0.65/webapps"
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.38.47:/opt/apache-tomcat-9.0.65/webapps"
        }
        build job: 'DW-Parameters'
      }
