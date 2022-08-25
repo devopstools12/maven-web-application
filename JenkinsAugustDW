@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent{
+    label('white')
+    }
     
     tools{
         maven "maven3.8.4"
