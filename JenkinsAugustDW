@@ -9,6 +9,7 @@ pipeline{
         maven "maven3.8.4"
     }
     
+    def branch = "git branch"
    
     stages{
         
